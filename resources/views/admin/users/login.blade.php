@@ -9,14 +9,15 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
-            <a href="/template/index2.html" class="h1"><b>Admin</b>LTE</a>
+            <a href="#" class="h1"><b>Admin</b></a>
         </div>
         <div class="card-body">
+            @include('admin.alert')
             <p class="login-box-msg">Sign in to start your session</p>
 
-            <form action="/template/index3.html" method="post">
+            <form action="/admin/users/store" method="post">
                 <div class="input-group mb-3">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input name="email" type="email" class="form-control" placeholder="Email">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <i class="bi bi-envelope-at-fill"></i>
@@ -24,7 +25,7 @@
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input name="password" type="password" class="form-control" placeholder="Password">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <i class="bi bi-key"></i>
@@ -34,7 +35,7 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="icheck-primary">
-                            <input type="checkbox" id="remember">
+                            <input name="remember" type="checkbox" id="remember">
                             <label for="remember">
                                 Remember Me
                             </label>
@@ -46,6 +47,7 @@
                     </div>
                     <!-- /.col -->
                 </div>
+                @csrf
             </form>
 
             <p class="mb-1">
