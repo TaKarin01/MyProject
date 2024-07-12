@@ -22,6 +22,7 @@ class LoginController extends Controller
             'password'=>$request->input('password')
 
         ],$request->input('remember'))){
+
             return redirect()->route('admin');
         }
         $request->session()->flash('error','Email not found! | Password not true!');
