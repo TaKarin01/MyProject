@@ -14,6 +14,7 @@ Route::middleware('auth')->group(function (){
        #CRUD-product
        Route::prefix('products')->group(function (){
           Route::get('add',[ProductController::class,'create']);
+           Route::post('store',[ProductController::class,'store']);
        });
    });
 });
