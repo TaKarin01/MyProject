@@ -41,7 +41,13 @@ class ProductController extends Controller
             'created_at'=>Carbon::now(),
             'updated_at'=>null
         ]);
+        return redirect()->route('products/add')->with('success','Added new product successfully!');
+    }
 
-        return redirect()->route('admin')->with('success','Added new product successfully!');
+    public function index()
+    {
+        return view('admin.menu.list',[
+            'title'=>'List of products'
+        ]);
     }
 }

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,6 +38,7 @@
                 <div class="row">
                     <!-- left column -->
                     <div class="col-md-12">
+                        @include('admin.alert')
                         <!-- jquery validation -->
                         <div class="card card-primary mt-2">
                             <div class="card-header">
