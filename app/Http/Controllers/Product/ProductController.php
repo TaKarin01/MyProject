@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProdcutStore;
+use App\Models\Product;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
@@ -47,7 +48,8 @@ class ProductController extends Controller
     public function index()
     {
         return view('admin.menu.list',[
-            'title'=>'List of products'
+            'title'=>'List of products',
+            'data_product'=>Product::paginate(10)
         ]);
     }
 }
